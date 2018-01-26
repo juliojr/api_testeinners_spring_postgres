@@ -38,10 +38,10 @@ public class PersonModel {
 	@JoinColumn(name = "info_id", nullable = false)
 	private InfoModel info;
 	
-	@OneToMany(mappedBy = "pessoa")
+	@OneToMany(mappedBy = "pessoa", fetch=FetchType.EAGER)
 	private List<TelModel> telefones = new ArrayList<>();
 	
-	@OneToMany(mappedBy = "pessoa", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy = "pessoa")
 	private List<EmailModel> emails = new ArrayList<>();
 	
 	public void add(TelModel tel) {
